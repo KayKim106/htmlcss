@@ -1,0 +1,70 @@
+body{
+	margin:0;
+	padding:0;
+	background:#000;
+}
+section{
+	position:absolute;
+	width:100%;
+	height:100vh;
+	overflow:hidden;
+}
+ul {
+	width:100%;
+	height:50px;
+	margin:0;
+	padding:0;
+	background:rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	display:flex;
+
+}
+img{
+	width:800px;
+}
+
+ul li{
+	list-style: none;
+	width:20%;
+}
+ul li a {
+	display:block;
+	text-align:center;
+	line-height:50px;
+	color:white;
+	text-decoration: none;
+	transition:0.2s;
+	cursor:pointer;
+}
+ul li a:hover {
+background:white;
+color:black;
+}
+section img{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:-2;
+	opacity:0;
+	transition:0.5s;
+}
+ul li:nth-child(1) a +img{
+	opacity:1;
+} 
+
+ul li a:hover +img {
+	opacity:1;
+	animation: animate 20s linear forwards;
+}
+
+@keyframes animate 
+{
+	0%{
+		transform:scale(1);
+	}
+	99%{
+		transform :scale(2);
+	}
+}
